@@ -1,0 +1,134 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
+
+    <!-- Ionic icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <title>Dashboard - Templune</title>
+</head>
+<style>
+.bx-x-circle{
+  font-size: 30;
+
+}
+</style>
+<body>
+    <div class="d-flex" id="content-wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-container" class="bg-primary">
+            <div class="logo">
+                <h4 class="text-light font-weight-bold mb-0">CNC SCHEDULE</h4>
+            </div>
+            <div class="menu">
+                <a href="{% url 'profile' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                    usuario</a>
+                <a href="{% url 'crear_curso' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
+                    crear Horario</a>
+                <a href="{% url 'cursosListados' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
+                    mostrar horario</a>
+                <a href="{% url 'crear_pensum' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
+                        crear pensum</a>
+                <a href="{% url 'pensum' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
+                            mostrar pensum</a>
+                <a href="{% url 'agenda' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
+                        mostrar agenda</a>
+                <a href="{% url 'crear_actividad' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
+                        crear actividad</a>
+                <a href="{% url 'informacion' usuario %}" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
+                        Informacion Materia</a>
+                <a href="{% url 'logout' %}" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
+                      Cerrar Sesion</a>
+            </div>
+        </div>
+        <!-- Fin sidebar -->
+
+        <div class="w-100">
+
+         <!-- Navbar -->
+        <!-- Page Content -->
+        <div id="content" class="bg-grey w-100">
+
+              <section class="bg-light py-3">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-9 col-md-8">
+                            <h1 class="font-weight-bold mb-0">ingresar cursos</h1>
+                            
+                      </div>
+                  </div>
+              </section>
+              <section class="form-register">
+                <form method="POST">
+                    {% csrf_token %}
+                    <h2>¿desea eliminar el registro {{object}}</h2>
+                        <button type="submit" class="btn btn-danger">eliminar</button>
+                        
+                        <a href="{% url 'cursosListados' usuario %}">cancelar</a>  
+                </form>
+        </section>
+            
+            
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, { 
+                type: 'bar',
+                data: {
+                    labels: ['Feb 2020', 'Mar 2020', 'Abr 2020', 'May 2020'],
+                    datasets: [{
+                        label: 'Nuevos usuarios',
+                        data: [50, 100, 150, 200],
+                        backgroundColor: [
+                            '#12C9E5',  
+                            '#12C9E5',
+                            '#12C9E5',
+                            '#111B54'
+                        ],
+                        maxBarThickness: 30,
+                        maxBarLength: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            </script>
+</body>
+
+</html>
+

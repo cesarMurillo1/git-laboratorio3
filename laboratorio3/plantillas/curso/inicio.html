@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CNC SCHEDULE</title>
+<link href="{% static '/styles.css'  %}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+ <title>CNC SCHEDULE</title>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+   
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="user.jpg">
+      
+    </div>
+
+    <!-- button -->
+    <form>
+      <input  type="submit" class="fadeIn five" value="Iniciar Sesion">
+      <a  href="{% url 'login' %}"class="button">Iniciar Sesion</a>
+      <a href="{% url 'register' %}"class="button">Crear cuenta</a> 
+      
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

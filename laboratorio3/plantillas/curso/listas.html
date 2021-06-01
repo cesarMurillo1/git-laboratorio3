@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>{{user.cursos.count}}</h1>
+    {% if cursos %}
+    <section class="table">
+    <table>
+       <thead>
+           <tr>
+               <th>#</th>
+               <th>nombre</th>
+               <th>Hora de inicio</th>
+               <th>hora final</th>
+               <th>creditos</th>
+               <th>profesor</th>
+               <th>dia</th>
+           </tr>
+       </thead> 
+       <tbody>
+           {% for curso in cursos %}
+           <tr>
+               <td>{{curso.id}}</td>
+               <td>{{curso.nombre}}</td>
+               <td>{{curso.start_time}}</td>
+               <td>{{curso.end_time}}</td>
+               <td>{{curso.creditos}}</td>
+               <td>{{curso.profesor}}</td>
+               <td>{{curso.dia}}</td>
+               <td>
+                   <a href="{% url 'editar_curso' curso.id %}"><i class="icon ion-md-settings lead mr-2"></i></a>
+                   <a href="{% url 'eliminarcurso' curso.id %}"><i class='bx bx-x-circle'></i></a>
+               </td>
+           </tr>
+           {% endfor %}
+       </tbody>
+    </table>
+{% else %}
+    <h1>no existes autores registrdos</h1>
+    {% endif %}   
+</section>
+        </section>
+</body>
+</html>
