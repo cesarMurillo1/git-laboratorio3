@@ -47,7 +47,7 @@ class Agenda(models.Model):
     descripcion =models.CharField(max_length=30)
     usuario=models.ForeignKey(User,on_delete=models.CASCADE,related_name='agendas')
     fecha_creacion = models.DateField('Fecha de creación', null=True,blank=True)
-    fecha_vencimiento = models.DateField('Fecha de vencimiento actividad', null = True,blank=True)
+    fecha_vencimiento = models.DateField('Fecha de vencimiento ', null = True,blank=True)
    
     def __str__(self):
         return f'{self.user.username}:{self.nombre}'

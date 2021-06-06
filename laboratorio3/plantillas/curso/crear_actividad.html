@@ -12,7 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'styleLES.css' %}">
     
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
@@ -32,23 +32,23 @@
                 <h4 class="text-light font-weight-bold mb-0">CNC SCHEDULE</h4>
             </div>
             <div class="menu">
-                <a href="{% url 'profile' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                <a href="{% url 'profile' %}" class="d-block text-light p-3 border-0"><i class="icon ion-logo-tux lead mr-2"></i>
                     usuario</a>
-                <a href="{% url 'crear_curso' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
+                <a href="{% url 'crear_curso' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-alarm lead mr-2"></i>
                     crear Horario</a>
-                <a href="{% url 'cursosListados' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
+                <a href="{% url 'cursosListados' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-paper lead mr-2"></i>
                     mostrar horario</a>
-                <a href="{% url 'crear_pensum' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
+                <a href="{% url 'crear_pensum' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-add lead mr-2"></i>
                         crear pensum</a>
-                <a href="{% url 'pensum' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
+                <a href="{% url 'pensum' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-filing lead mr-2"></i>
                             mostrar pensum</a>
-                <a href="{% url 'agenda' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
+                <a href="{% url 'agenda' usuario %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-calendar lead mr-2"></i>
                         mostrar agenda</a>
-                <a href="{% url 'crear_actividad' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
+                <a href="{% url 'crear_actividad' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-journal lead mr-2"></i>
                         crear actividad</a>
-                <a href="{% url 'informacion' usuario %}" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
+                <a href="{% url 'informacion' usuario %}" class="d-block text-light p-3 border-0"> <i class="icon ion-md-help lead mr-2"></i>
                         Informacion Materia</a>
-                <a href="{% url 'logout' %}" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
+                <a href="{% url 'logout' %}" class="d-block text-light p-3 border-0"> <i class="icon ion-md-close lead mr-2"></i>
                       Cerrar Sesion</a>
             </div>
         </div>
@@ -69,7 +69,7 @@
                       </div>
                   </div>
               </section>
-              <section class="form-register">
+              <section class="form-actividad">
               <form method="POST">
                 {% csrf_token %}
                 {% if error %}  

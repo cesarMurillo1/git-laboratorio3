@@ -12,16 +12,30 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styleLES.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesL.css' %}">
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
 
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-
+    
     <title>CNC SCHEDULE</title>
+    <style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #BBD2C5;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, rgba(41, 46, 73, 0.603), rgba(83, 105, 118, 0.658), rgba(187, 210, 197, 0.404));
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, rgba(41, 46, 73, 0.61), rgba(83, 105, 118, 0.658), rgba(187, 210, 197, 0.404)),url("https://www.wallpapertip.com/wmimgs/72-723793_library-books-shelf-wallpaper-black-and-white-book.jpg");
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
+    </style>
 </head>
 {% if request.user.is_authenticated %}
 <body>
@@ -33,18 +47,25 @@
                 <h4 class="text-light font-weight-bold mb-0">CNC SCHEDULE</h4>
             </div>
             <div class="menu">
-                <a href="{% url 'profile' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                    usuario</a>
 
-
-
-                <a href="{% url 'crear_curso' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
-                    crear Horario</a>
-                
-                <a href="#" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
-                    Informacion Materia</a>
-                <a href="{% url 'logout' %}" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
-                      Cerrar Sesion</a>
+                    <a href="{% url 'profile' %}" class="d-block text-light p-3 border-0"><i class="icon ion-logo-tux lead mr-2"></i>
+                        usuario</a>
+                    <a href="{% url 'crear_curso' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-alarm lead mr-2"></i>
+                        crear Horario</a>
+                    <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-paper lead mr-2"></i>
+                        mostrar horario</a>
+                    <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-add lead mr-2"></i>
+                            crear pensum</a>
+                    <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-filing lead mr-2"></i>
+                                mostrar pensum</a>
+                    <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-calendar lead mr-2"></i>
+                            mostrar agenda</a>
+                    <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-journal lead mr-2"></i>
+                            crear actividad</a>
+                    <a href="#" class="d-block text-light p-3 border-0"> <i class="icon ion-md-help lead mr-2"></i>
+                            Informacion Materia</a>
+                    <a href="#" class="d-block text-light p-3 border-0"> <i class="icon ion-md-close lead mr-2"></i>
+                          Cerrar Sesion</a>
             </div>
         </div>
         <!-- Fin sidebar -->
@@ -135,7 +156,6 @@
               <br>
               <br>
               <br>
-            <input  type="submit" class="fadeIn five" value="Iniciar Sesion">
             <br>
             <br>
             <a  href="{% url 'login' %}"class="button">Iniciar Sesion</a>
